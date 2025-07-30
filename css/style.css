@@ -1608,6 +1608,7 @@ input:not([type=submit]):focus::placeholder {
   width: 100%;
   height: 100%;
   border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  object-fit: cover;
   z-index: 2;
 }
 
@@ -2408,6 +2409,10 @@ input:not([type=submit]):focus::placeholder {
   }
 
   .reviews__item-video > img {
+    border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  }
+
+  .reviews__item-video video {
     border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
   }
 
