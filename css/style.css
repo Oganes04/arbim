@@ -1601,6 +1601,16 @@ input:not([type=submit]):focus::placeholder {
   z-index: 10;
 }
 
+.reviews__item-video video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  z-index: 2;
+}
+
 .reviews__item-info {
   justify-content: space-between;
   padding-bottom: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));

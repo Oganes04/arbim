@@ -52,3 +52,21 @@ $(document).on('click', '.header__adaptive nav ul li', function(e) {
   $(".header__adaptive").slideToggle(300);
   $('html').removeClass('hidden');
 });
+
+
+//========================== ВИДЕО ОТЗЫВОВ ====================
+
+$(document).on('click', '.reviews__item-video .play-button', function(e) {
+    const videoLink = $(this).closest('.reviews__item-video').data('video-link');
+    const videoContainer = $(this).closest('.reviews__item-video');
+    
+    // Добавляем видео в конец контейнера
+    videoContainer.append(`
+        <video controls autoplay>
+            <source src="${videoLink}" type="video/mp4">
+        </video>
+    `);
+    
+    // Скрываем кнопку play (если нужно)
+    $(this).hide(); 
+});
