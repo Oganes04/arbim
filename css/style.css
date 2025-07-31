@@ -150,7 +150,7 @@ body {
   color: #20272C;
 }
 
-section:not(.offer):not(.popup) {
+section {
   padding-top: clamp(104px * var(--coefficient), 104 * 100vw / var(--design-width) * var(--mobile-coefficient), 104px * var(--mobile-coefficient));
 }
 
@@ -973,6 +973,7 @@ form .row > label:not(.form__policy) p span {
   color: #FFFFFF;
   border-radius: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(100px * var(--coefficient), 100 * 100vw / var(--design-width) * var(--mobile-coefficient), 100px * var(--mobile-coefficient));
   position: relative;
+  padding-top: 0;
 }
 
 .offer .offer-bg-1 {
@@ -1935,7 +1936,6 @@ form .row > label:not(.form__policy) p span {
 
 .faq {
   position: relative;
-  padding-bottom: clamp(104px * var(--coefficient), 104 * 100vw / var(--design-width) * var(--mobile-coefficient), 104px * var(--mobile-coefficient));
 }
 
 .faq .faq-bg-1 {
@@ -2384,6 +2384,10 @@ form .row > label:not(.form__policy) p span {
     margin-bottom: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
   }
 
+  .calculator {
+    padding-bottom: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+  }
+
   .calculator .calculator-bg-1,
   .calculator .calculator-bg-2 {
     display: none;
@@ -2417,6 +2421,10 @@ form .row > label:not(.form__policy) p span {
 
   .calculator__info button {
     display: none;
+  }
+
+  .cases {
+    padding-bottom: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
   }
 
   .cases .cases-bg-1,
