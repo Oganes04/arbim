@@ -844,6 +844,27 @@ form .row > label:not(.form__policy) p span {
   color: #FFFFFF;
 }
 
+.bottom__btns {
+  position: fixed;
+  right: clamp(28px * var(--coefficient), 28 * 100vw / var(--design-width) * var(--mobile-coefficient), 28px * var(--mobile-coefficient));
+  bottom: clamp(28px * var(--coefficient), 28 * 100vw / var(--design-width) * var(--mobile-coefficient), 28px * var(--mobile-coefficient));
+  z-index: 20;
+  text-align: right;
+  margin-bottom: 0;
+  z-index: 997;
+}
+
+.bottom__btns a {
+  display: block;
+  width: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+  height: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+}
+
+.bottom__btns a svg {
+  width: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+  height: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+}
+
 .header {
   background-color: #20272C;
   position: sticky;
@@ -986,6 +1007,7 @@ form .row > label:not(.form__policy) p span {
   border-radius: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(100px * var(--coefficient), 100 * 100vw / var(--design-width) * var(--mobile-coefficient), 100px * var(--mobile-coefficient));
   position: relative;
   padding-top: 0;
+  z-index: 2;
 }
 
 .offer .offer-bg-1 {
@@ -3111,6 +3133,23 @@ form .row > label:not(.form__policy) p span {
 
   .popup input:not([type=submit])::placeholder {
     font-size: clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient));
+  }
+
+  .bottom__btns {
+    position: fixed;
+    right: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+    bottom: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+  }
+
+  .bottom__btns a {
+    display: block;
+    width: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+    height: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+  }
+
+  .bottom__btns a svg {
+    width: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+    height: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
   }
 }
 
