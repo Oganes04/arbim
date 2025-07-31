@@ -208,6 +208,14 @@ h2.section-header {
   color: #20272C;
   margin-bottom: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
   font-family: Helvetica-Bold;
+  position: relative;
+}
+
+h2.section-header::before {
+  display: block;
+  content: "";
+  height: 150px;
+  margin: -150px 0 0;
 }
 
 .call-button,
@@ -402,6 +410,10 @@ h2.section-header {
 
 .view-more:active {
   opacity: 1;
+}
+
+.view-more.mobile {
+  display: none !important;
 }
 
 .play-button {
@@ -1096,6 +1108,7 @@ form .row > label:not(.form__policy) p span {
 .calculator {
   position: relative;
   padding-bottom: clamp(104px * var(--coefficient), 104 * 100vw / var(--design-width) * var(--mobile-coefficient), 104px * var(--mobile-coefficient));
+  z-index: 1;
 }
 
 .calculator .calculator-bg-1 {
@@ -1656,6 +1669,7 @@ form .row > label:not(.form__policy) p span {
   position: relative;
   padding-bottom: clamp(104px * var(--coefficient), 104 * 100vw / var(--design-width) * var(--mobile-coefficient), 104px * var(--mobile-coefficient));
   overflow-x: clip;
+  z-index: 1;
 }
 
 .audit-form .audit-form-bg-1 {
@@ -1887,6 +1901,8 @@ form .row > label:not(.form__policy) p span {
   background-color: #20272C;
   padding-bottom: clamp(104px * var(--coefficient), 104 * 100vw / var(--design-width) * var(--mobile-coefficient), 104px * var(--mobile-coefficient));
   border-radius: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(100px * var(--coefficient), 100 * 100vw / var(--design-width) * var(--mobile-coefficient), 100px * var(--mobile-coefficient));
+  position: relative;
+  z-index: 1;
 }
 
 .customers h2.section-header {
@@ -2206,6 +2222,11 @@ form .row > label:not(.form__policy) p span {
   h2.section-header {
     font-size: clamp(28px * var(--coefficient), 28 * 100vw / var(--design-width) * var(--mobile-coefficient), 28px * var(--mobile-coefficient));
     margin-bottom: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  }
+
+  h2.section-header::before {
+    height: 100px;
+    margin: -100px 0 0;
   }
 
   .mobile {
