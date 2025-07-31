@@ -688,6 +688,7 @@ form .row > label:not(.form__policy) p span {
   overflow: hidden;
   background: rgba(32, 39, 44, 0.8);
   backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
   display: none;
 }
 
@@ -3014,6 +3015,10 @@ form .row > label:not(.form__policy) p span {
     width: clamp(358px * var(--coefficient), 358 * 100vw / var(--design-width) * var(--mobile-coefficient), 358px * var(--mobile-coefficient));
     padding: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
     border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  }
+
+  .popup > img {
+    display: none;
   }
 
   .popup-close {
