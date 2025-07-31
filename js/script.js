@@ -147,3 +147,21 @@ $(document).on('click', '.submit-button', function(e) {
 });
 
 
+
+$(document).ready(function () {
+    const $btn = $('.bottom__btns');
+    
+    // Сначала скрываем кнопку
+    $btn.hide();
+
+    // Отслеживаем скролл
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 300) {
+            $btn.fadeIn();
+        } else {
+            $btn.fadeOut();
+        }
+    });
+});
+
+
