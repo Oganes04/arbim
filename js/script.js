@@ -138,4 +138,12 @@ $(document).on('click', '.popup-lead-magnet-btn', function(e) {
   openPopup($('.popup-lead-magnet'));
 });
 
+$(document).on('submit', 'form', function(e) {
+  e.preventDefault();
+});
+
+$(document).on('click', '.submit-button', function(e) {
+  openPopup($('.popup-thanks'));
+});
+
 

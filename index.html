@@ -9,6 +9,38 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <title>Arbi:m</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "arbi:m",
+  "url": "https://arbi-m.com/",
+  "logo": "https://arbi-m.com/images/logo.svg",
+  "telephone": [
+    "+7-978-065-64-65",
+    "+7-978-065-64-65"
+  ],
+  "email": "info@arbi-m.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Коммунальная, 22/3",
+    "addressLocality": "Симферополь",
+    "addressRegion": "Республика Крым",
+    "postalCode": "295001",
+    "addressCountry": "Российская Федерация"
+  },
+  "sameAs": [
+    "https://vk.com/arbi_m_it",
+    "https://t.me/your_telegram",
+    "https://tenchat.me/your_tenchat"
+  ],
+  "founder": "Айдер",
+  "foundingDate": "1998-08-05",
+  "description": "Краткое описание вашей компании"
+}
+</script>
+
 </head>
 <body>
 
@@ -21,31 +53,19 @@
     
                 <nav>
                     <ul class="flex">
-                        <!-- <li>
-                            <a href="">Услуги</a>
+                        <li>
+                            <a href="#services">Услуги</a>
                         </li>
                         <li>
-                            <a href="">О нас</a>
+                            <a href="#cases">Кейсы</a>
                         </li>
                         <li>
-                            <a href="">Блог</a>
+                            <a href="#reviews">Отзывы</a>
                         </li>
                         <li>
-                            <a href="">Контакты</a>
+                            <a href="#faq">FAQ</a>
                         </li>
-                    </ul> -->
-                    <li>
-                        <a href="#services">Услуги</a>
-                    </li>
-                    <li>
-                        <a href="#cases">Кейсы</a>
-                    </li>
-                    <li>
-                        <a href="#reviews">Отзывы</a>
-                    </li>
-                    <li>
-                        <a href="#faq">FAQ</a>
-                    </li>
+                    </ul>
                 </nav>
     
                 <a href="tel:+79780656365" class="call-button">
@@ -72,18 +92,6 @@
                 <div class="container">
                     <nav>
                         <ul class="flex">
-                            <!-- <li>
-                                <a href="">Услуги</a>
-                            </li>
-                            <li>
-                                <a href="">О нас</a>
-                            </li>
-                            <li>
-                                <a href="">Блог</a>
-                            </li>
-                            <li>
-                                <a href="">Контакты</a>
-                            </li> -->
                             <li>
                                 <a href="#services">Услуги</a>
                             </li>
@@ -1282,7 +1290,7 @@
                     <input type="submit" value="">
                     <span class="text">Получить предложение</span>
                     <span class="icon">
-                        <img src="../images/icons/icon-eye.svg" alt="" aria-hidden="true">
+                        <img src="../images/icons/icon-list.svg" alt="" aria-hidden="true">
                     </span>
                 </div>
             </div>
@@ -1346,7 +1354,7 @@
                     <input type="submit" value="">
                     <span class="text">Расчитать окупаемость проекта</span>
                     <span class="icon">
-                        <img src="../images/icons/icon-eye.svg" alt="" aria-hidden="true">
+                        <img src="../images/icons/icon-calculate.svg" alt="" aria-hidden="true">
                     </span>
                 </div>
     
@@ -1354,7 +1362,7 @@
                     <input type="submit" value="">
                     <span class="text">Расчитать окупаемость</span>
                     <span class="icon">
-                        <img src="../images/icons/icon-eye.svg" alt="" aria-hidden="true">
+                        <img src="../images/icons/icon-calculate.svg" alt="" aria-hidden="true">
                     </span>
                 </div>
             </div>
@@ -1419,14 +1427,14 @@
                     <input type="submit" value="">
                     <span class="text">Получить коммерческое предложение</span>
                     <span class="icon">
-                        <img src="../images/icons/icon-eye.svg" alt="" aria-hidden="true">
+                        <img src="../images/icons/icon-mail.svg" alt="" aria-hidden="true">
                     </span>
                 </div>
                 <div class="submit-button mobile">
                     <input type="submit" value="">
                     <span class="text">Получить предложение</span>
                     <span class="icon">
-                        <img src="../images/icons/icon-eye.svg" alt="" aria-hidden="true">
+                        <img src="../images/icons/icon-mail.svg" alt="" aria-hidden="true">
                     </span>
                 </div>
             </div>
@@ -1480,12 +1488,32 @@
                     <input type="submit" value="">
                     <span class="text">Узнать подробнее</span>
                     <span class="icon">
-                        <img src="../images/icons/icon-eye.svg" alt="" aria-hidden="true">
+                        <img src="../images/icons/icon-mail.svg" alt="" aria-hidden="true">
                     </span>
                 </div>
             </div>
         </form>
         
+    </section>
+    
+    
+    <section class="popup popup-thanks">
+        <img src="../../images/popup-bg.png" alt="" role="presentation">
+        <!-- <div class="popup__top flex">
+            <h2>Спасибо за заявку</h2>
+    
+            <div class="popup-close flex">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.70678 6.05301L20.0001 16.3463L30.2401 6.10634C30.4663 5.86559 30.7388 5.67299 31.0412 5.54011C31.3436 5.40722 31.6698 5.33678 32.0001 5.33301C32.7074 5.33301 33.3856 5.61396 33.8857 6.11406C34.3858 6.61415 34.6668 7.29243 34.6668 7.99967C34.673 8.32661 34.6123 8.65137 34.4885 8.95403C34.3647 9.25668 34.1804 9.53084 33.9468 9.75968L23.5734 19.9997L33.9468 30.373C34.3863 30.803 34.644 31.3852 34.6668 31.9997C34.6668 32.7069 34.3858 33.3852 33.8857 33.8853C33.3856 34.3854 32.7074 34.6663 32.0001 34.6663C31.6603 34.6804 31.3212 34.6237 31.0044 34.4998C30.6877 34.3758 30.4001 34.1874 30.1601 33.9463L20.0001 23.653L9.73344 33.9197C9.50812 34.1524 9.23895 34.3382 8.94145 34.4664C8.64395 34.5945 8.32401 34.6625 8.00011 34.6663C7.29286 34.6663 6.61459 34.3854 6.11449 33.8853C5.61439 33.3852 5.33344 32.7069 5.33344 31.9997C5.32722 31.6727 5.38788 31.348 5.51169 31.0453C5.63551 30.7427 5.81986 30.4685 6.05344 30.2397L16.4268 19.9997L6.05344 9.62634C5.61393 9.19636 5.35621 8.61411 5.33344 7.99967C5.33344 7.29243 5.61439 6.61415 6.11449 6.11406C6.61459 5.61396 7.29286 5.33301 8.00011 5.33301C8.64011 5.34101 9.25344 5.59967 9.70678 6.05301Z" fill="#006BFF"/>
+                </svg>
+            </div>
+        </div> -->
+    
+        <h2>Спасибо за заявку</h2>
+        
+        <p class="popup-subtitle">Наш менеджер совсем скоро свяжется с вам по указанному телефону</p>
+    
+        <a href="index.html">Вернуться на главную</a>
     </section>
 
     
