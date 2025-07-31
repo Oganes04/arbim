@@ -150,7 +150,7 @@ body {
   color: #20272C;
 }
 
-section:not(.offer) {
+section:not(.offer):not(.popup) {
   padding-top: clamp(104px * var(--coefficient), 104 * 100vw / var(--design-width) * var(--mobile-coefficient), 104px * var(--mobile-coefficient));
 }
 
@@ -256,8 +256,11 @@ h2.section-header {
 }
 
 .call-button span.icon img,
+.call-button span.icon svg,
 .get-offer-button span.icon img,
-.submit-button span.icon img {
+.get-offer-button span.icon svg,
+.submit-button span.icon img,
+.submit-button span.icon svg {
   width: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
   height: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
 }
@@ -389,6 +392,7 @@ h2.section-header {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   margin-top: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+  display: none;
 }
 
 .view-more img {
@@ -477,8 +481,8 @@ h2.section-header {
 }
 
 .fakecheck svg polyline {
-  stroke-dasharray: 20;
-  stroke-dashoffset: 20;
+  stroke-dasharray: 25;
+  stroke-dashoffset: 25;
   transition: all 0.3s ease-out 0s;
 }
 
@@ -537,6 +541,42 @@ input:not([type=submit])::placeholder {
 
 input:not([type=submit]):focus::placeholder {
   opacity: 0;
+}
+
+form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px * var(--coefficient), 36 * 100vw / var(--design-width) * var(--mobile-coefficient), 36px * var(--mobile-coefficient));
+}
+
+form .row {
+  justify-content: space-between;
+  gap: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+}
+
+form .row > label:not(.form__policy) {
+  flex: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
+}
+
+form .row > label:not(.form__policy) p {
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  font-family: Helvetica-Light;
+  line-height: 140%;
+}
+
+form .row > label:not(.form__policy) p span {
+  color: #DA0021;
 }
 
 /* ========================== Cтили для бургер меню ==================== */
@@ -619,6 +659,176 @@ input:not([type=submit]):focus::placeholder {
 
 .hidden {
   overflow: hidden !important;
+}
+
+/* ========================== СТИЛИЗАЦИЯ POPUP ОКОН ==================== */
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 99998;
+  background-color: rgba(0, 0, 0, 0.3960784314);
+  display: none;
+}
+
+.popup {
+  width: clamp(1664px * var(--coefficient), 1664 * 100vw / var(--design-width) * var(--mobile-coefficient), 1664px * var(--mobile-coefficient));
+  min-height: fit-content;
+  height: auto;
+  padding: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient)) clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient)) clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient)) clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+  border-radius: clamp(5px * var(--coefficient), 5 * 100vw / var(--design-width) * var(--mobile-coefficient), 5px * var(--mobile-coefficient)) clamp(100px * var(--coefficient), 100 * 100vw / var(--design-width) * var(--mobile-coefficient), 100px * var(--mobile-coefficient)) clamp(100px * var(--coefficient), 100 * 100vw / var(--design-width) * var(--mobile-coefficient), 100px * var(--mobile-coefficient)) clamp(100px * var(--coefficient), 100 * 100vw / var(--design-width) * var(--mobile-coefficient), 100px * var(--mobile-coefficient));
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  overflow: hidden;
+  background: rgba(32, 39, 44, 0.8);
+  backdrop-filter: blur(40px);
+  display: none;
+}
+
+.popup > img {
+  position: absolute;
+  top: 0;
+  right: clamp(154px * var(--coefficient), 154 * 100vw / var(--design-width) * var(--mobile-coefficient), 154px * var(--mobile-coefficient));
+}
+
+.popup-close {
+  width: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+  height: clamp(64px * var(--coefficient), 64 * 100vw / var(--design-width) * var(--mobile-coefficient), 64px * var(--mobile-coefficient));
+  background-color: #FFFFFF;
+  border-radius: clamp(1px * var(--coefficient), 1 * 100vw / var(--design-width) * var(--mobile-coefficient), 1px * var(--mobile-coefficient)) clamp(100px * var(--coefficient), 100 * 100vw / var(--design-width) * var(--mobile-coefficient), 100px * var(--mobile-coefficient)) clamp(100px * var(--coefficient), 100 * 100vw / var(--design-width) * var(--mobile-coefficient), 100px * var(--mobile-coefficient)) clamp(100px * var(--coefficient), 100 * 100vw / var(--design-width) * var(--mobile-coefficient), 100px * var(--mobile-coefficient));
+  flex: none;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.popup-close svg {
+  width: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
+  height: clamp(40px * var(--coefficient), 40 * 100vw / var(--design-width) * var(--mobile-coefficient), 40px * var(--mobile-coefficient));
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.popup-close svg path {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.popup-close:active {
+  background-color: #006BFF;
+}
+
+.popup-close:active svg path {
+  fill: #FFFFFF;
+}
+
+.popup__top {
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+}
+
+.popup h2 {
+  font-size: clamp(80px * var(--coefficient), 80 * 100vw / var(--design-width) * var(--mobile-coefficient), 80px * var(--mobile-coefficient));
+  line-height: 120%;
+  color: #006BFF;
+}
+
+.popup-subtitle {
+  font-size: clamp(36px * var(--coefficient), 36 * 100vw / var(--design-width) * var(--mobile-coefficient), 36px * var(--mobile-coefficient));
+  line-height: 130%;
+  color: #FFFFFF;
+  margin-bottom: clamp(32px * var(--coefficient), 32 * 100vw / var(--design-width) * var(--mobile-coefficient), 32px * var(--mobile-coefficient));
+}
+
+.popup input:not([type=submit]) {
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+.popup input:not([type=submit])::placeholder {
+  font-size: clamp(20px * var(--coefficient), 20 * 100vw / var(--design-width) * var(--mobile-coefficient), 20px * var(--mobile-coefficient));
+  line-height: 140%;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.popup input:not([type=submit]):focus::placeholder {
+  opacity: 0;
+}
+
+.popup form {
+  gap: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+}
+
+.popup form .row {
+  gap: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  display: -ms-grid;
+  display: -moz-grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.popup form .row > label:not(.form__policy) p {
+  color: #FFFFFF;
+}
+
+.popup form .row .submit-button {
+  grid-column-start: 3;
+  padding-left: 0;
+  gap: 0;
+}
+
+.popup form .row .submit-button .text {
+  flex: 1;
+  text-align: center;
+}
+
+.popup form .row.col-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.popup form .row.col-2 .submit-button {
+  grid-column-start: 2;
+}
+
+.popup form .row.col-2 .form__policy {
+  grid-column: auto;
+}
+
+.popup .fakecheck {
+  border-color: #FFFFFF;
+}
+
+.popup .form__policy {
+  grid-column: span 2/span 2;
+  margin-right: auto;
+}
+
+.popup .form__policy p {
+  color: #FFFFFF;
+}
+
+.popup .form__policy p a {
+  color: #FFFFFF;
 }
 
 .header {
@@ -910,7 +1120,7 @@ input:not([type=submit]):focus::placeholder {
 .calculator__inner > img {
   width: clamp(815px * var(--coefficient), 815 * 100vw / var(--design-width) * var(--mobile-coefficient), 815px * var(--mobile-coefficient));
   height: clamp(678px * var(--coefficient), 678 * 100vw / var(--design-width) * var(--mobile-coefficient), 678px * var(--mobile-coefficient));
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .calculator__info h2.section-header {
@@ -974,6 +1184,7 @@ input:not([type=submit]):focus::placeholder {
 .cases__item {
   border-radius: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
   position: relative;
+  cursor: pointer;
 }
 
 .cases__item > a {
@@ -1127,6 +1338,7 @@ input:not([type=submit]):focus::placeholder {
   flex-direction: column;
   gap: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
   align-items: flex-start;
+  cursor: pointer;
 }
 
 .services__item > a {
@@ -1803,6 +2015,10 @@ input:not([type=submit]):focus::placeholder {
   color: #FFFFFF;
 }
 
+.blog {
+  display: none;
+}
+
 .blog ul {
   display: -ms-grid;
   display: -moz-grid;
@@ -1922,6 +2138,10 @@ input:not([type=submit]):focus::placeholder {
 
 .blog__item:active .link-button svg path {
   fill: #003988;
+}
+
+.lead-magnet {
+  display: none;
 }
 
 .lead-magnet__inner {
@@ -2375,6 +2595,24 @@ input:not([type=submit]):focus::placeholder {
     font-size: clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient));
   }
 
+  form {
+    gap: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  }
+
+  form .row {
+    flex-direction: column;
+    gap: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
+  }
+
+  form .row > label:not(.form__policy) {
+    width: 100%;
+    gap: clamp(4px * var(--coefficient), 4 * 100vw / var(--design-width) * var(--mobile-coefficient), 4px * var(--mobile-coefficient));
+  }
+
+  form .row > label:not(.form__policy) p {
+    font-size: clamp(12px * var(--coefficient), 12 * 100vw / var(--design-width) * var(--mobile-coefficient), 12px * var(--mobile-coefficient));
+  }
+
   .reviews {
     border-radius: clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient)) clamp(0px * var(--coefficient), 0 * 100vw / var(--design-width) * var(--mobile-coefficient), 0px * var(--mobile-coefficient));
   }
@@ -2761,6 +2999,85 @@ input:not([type=submit]):focus::placeholder {
     gap: clamp(13px * var(--coefficient), 13 * 100vw / var(--design-width) * var(--mobile-coefficient), 13px * var(--mobile-coefficient));
     margin-bottom: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
   }
+
+  /* ========================== СТИЛИЗАЦИЯ POPUP ОКОН ==================== */
+
+  .popup-calculator .submit-button {
+    display: none;
+  }
+
+  .popup-lead-magnet .submit-button {
+    display: none;
+  }
+
+  .popup {
+    width: clamp(358px * var(--coefficient), 358 * 100vw / var(--design-width) * var(--mobile-coefficient), 358px * var(--mobile-coefficient));
+    padding: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient)) clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+    border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  }
+
+  .popup-close {
+    width: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+    height: clamp(48px * var(--coefficient), 48 * 100vw / var(--design-width) * var(--mobile-coefficient), 48px * var(--mobile-coefficient));
+    border-radius: clamp(1px * var(--coefficient), 1 * 100vw / var(--design-width) * var(--mobile-coefficient), 1px * var(--mobile-coefficient)) clamp(75px * var(--coefficient), 75 * 100vw / var(--design-width) * var(--mobile-coefficient), 75px * var(--mobile-coefficient)) clamp(75px * var(--coefficient), 75 * 100vw / var(--design-width) * var(--mobile-coefficient), 75px * var(--mobile-coefficient)) clamp(75px * var(--coefficient), 75 * 100vw / var(--design-width) * var(--mobile-coefficient), 75px * var(--mobile-coefficient));
+  }
+
+  .popup-close svg {
+    width: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+    height: clamp(30px * var(--coefficient), 30 * 100vw / var(--design-width) * var(--mobile-coefficient), 30px * var(--mobile-coefficient));
+  }
+
+  .popup h2 {
+    font-size: clamp(28px * var(--coefficient), 28 * 100vw / var(--design-width) * var(--mobile-coefficient), 28px * var(--mobile-coefficient));
+    max-width: 80%;
+  }
+
+  .popup-subtitle {
+    font-size: clamp(18px * var(--coefficient), 18 * 100vw / var(--design-width) * var(--mobile-coefficient), 18px * var(--mobile-coefficient));
+    margin-bottom: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  }
+
+  .popup form {
+    gap: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  }
+
+  .popup form .row {
+    grid-template-columns: 1fr;
+    gap: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
+  }
+
+  .popup form .row .submit-button {
+    grid-column-start: 1;
+  }
+
+  .popup form .row.col-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .popup form .row.col-2:has(.form__policy) {
+    margin-top: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
+  }
+
+  .popup form .row.col-2 .submit-button {
+    grid-column-start: 1;
+  }
+
+  .popup form:has(.col-2) {
+    gap: clamp(8px * var(--coefficient), 8 * 100vw / var(--design-width) * var(--mobile-coefficient), 8px * var(--mobile-coefficient));
+  }
+
+  .popup form .form__policy {
+    grid-column: auto;
+  }
+
+  .popup input:not([type=submit]) {
+    height: clamp(44px * var(--coefficient), 44 * 100vw / var(--design-width) * var(--mobile-coefficient), 44px * var(--mobile-coefficient));
+    font-size: clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient));
+  }
+
+  .popup input:not([type=submit])::placeholder {
+    font-size: clamp(14px * var(--coefficient), 14 * 100vw / var(--design-width) * var(--mobile-coefficient), 14px * var(--mobile-coefficient));
+  }
 }
 
 @media (hover: hover) {
@@ -2799,6 +3116,14 @@ input:not([type=submit]):focus::placeholder {
 
   .view-more:hover {
     opacity: 1;
+  }
+
+  .popup-close:hover {
+    background-color: #006BFF;
+  }
+
+  .popup-close:hover svg path {
+    fill: #FFFFFF;
   }
 
   .cases__item:hover .cases__item-img::after {
