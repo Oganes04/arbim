@@ -148,6 +148,8 @@ $(document).on('click', '.submit-button', function(e) {
 
 
 
+//========================== Функционал появления / скрытия кнопки скролла ====================
+
 $(document).ready(function () {
     const $btn = $('.bottom__btns');
     
@@ -165,3 +167,21 @@ $(document).ready(function () {
 });
 
 
+
+
+//========================== ВИДЕО В ОФФЕРЕ ====================
+
+$(document).on('click', '.offer__content-video .play-button', function(e) {
+    const videoLink = $(this).closest('.offer__content-video').data('video-link');
+    const videoContainer = $(this).closest('.offer__content-video');
+    
+    // Добавляем видео в конец контейнера
+    videoContainer.append(`
+        <video controls autoplay>
+            <source src="${videoLink}" type="video/mp4">
+        </video>
+    `);
+    
+    // Скрываем кнопку play (если нужно)
+    $(this).hide(); 
+});

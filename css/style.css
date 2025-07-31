@@ -1162,6 +1162,17 @@ form .row > label:not(.form__policy) p span {
   z-index: 10;
 }
 
+.offer__content-video video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  object-fit: cover;
+  z-index: 2;
+}
+
 .calculator {
   position: relative;
   padding-bottom: clamp(104px * var(--coefficient), 104 * 100vw / var(--design-width) * var(--mobile-coefficient), 104px * var(--mobile-coefficient));
@@ -2415,6 +2426,10 @@ form .row > label:not(.form__policy) p span {
   }
 
   .offer__content-video::after {
+    border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
+  }
+
+  .offer__content-video video {
     border-radius: clamp(24px * var(--coefficient), 24 * 100vw / var(--design-width) * var(--mobile-coefficient), 24px * var(--mobile-coefficient));
   }
 
