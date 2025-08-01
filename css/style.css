@@ -2038,7 +2038,7 @@ form .row > label:not(.form__policy) p span {
   height: clamp(716px * var(--coefficient), 716 * 100vw / var(--design-width) * var(--mobile-coefficient), 716px * var(--mobile-coefficient));
 }
 
-.faq ul {
+.faq .container > ul {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2073,6 +2073,22 @@ form .row > label:not(.form__policy) p span {
   line-height: 140%;
   font-family: Helvetica-Light;
   display: none;
+}
+
+.faq__item-answer ul {
+  padding-left: 1rem;
+}
+
+.faq__item-answer ul li {
+  list-style-type: disc;
+}
+
+.faq__item-answer ol {
+  padding-left: 1rem;
+}
+
+.faq__item-answer ol li {
+  list-style-type: decimal;
 }
 
 .faq__item:has(.faq__item-question.open) .faq-button {
@@ -2830,7 +2846,7 @@ form .row > label:not(.form__policy) p span {
     display: none;
   }
 
-  .faq ul {
+  .faq .container ul {
     gap: clamp(16px * var(--coefficient), 16 * 100vw / var(--design-width) * var(--mobile-coefficient), 16px * var(--mobile-coefficient));
   }
 
